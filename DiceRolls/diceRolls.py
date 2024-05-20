@@ -20,38 +20,7 @@ while arrayIndex < numRolls:
 
     result = num1 + num2
 
-    if result == 2:
-        array[0] += 1
-    
-    elif result == 3:
-        array[1] += 1
-    
-    elif result == 4:
-        array[2] += 1
-    
-    elif result == 5:
-        array[3] += 1
-    
-    elif result == 6:
-        array[4] += 1
-
-    elif result == 7:
-        array[5] += 1
-
-    elif result == 8:
-        array[6] += 1
-
-    elif result == 9:
-        array[7] += 1
-    
-    elif result == 10:
-        array[8] += 1
-
-    elif result == 11:
-        array[9] += 1
-
-    else:
-        array[10] += 1
+    array[result - 2] += 1
 
     arrayIndex += 1
 
