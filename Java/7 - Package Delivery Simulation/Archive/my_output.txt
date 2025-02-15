@@ -1,0 +1,570 @@
+With 25.0% drones and 1500 packages,
+There will be:
+-375 drones
+-113 trucks
+
+TRAIN SCHEDULE
+--------------
+94-171
+213-302
+376-412
+438-564
+627-695
+764-828
+862-1004
+1019-1089
+1146-1242
+1325-1380
+1382-1412
+1448-1492
+
+0.0: TRUCK #0 begins journey
+15.0: TRUCK #1 begins journey
+30.0: TRUCK #2 begins journey
+45.0: TRUCK #3 begins journey
+60.0: TRUCK #4 begins journey
+75.0: TRUCK #5 begins journey
+90.0: TRUCK #6 begins journey
+94.0: TRAIN arrives at crossing
+100.0: TRUCK #0 waits at crossing
+105.0: TRUCK #7 begins journey
+115.0: TRUCK #1 waits at crossing
+120.0: TRUCK #8 begins journey
+130.0: TRUCK #2 waits at crossing
+135.0: TRUCK #9 begins journey
+145.0: TRUCK #3 waits at crossing
+150.0: TRUCK #10 begins journey
+160.0: TRUCK #4 waits at crossing
+165.0: TRUCK #11 begins journey
+171.0: TRAIN leaves crossing
+172.0: TRUCK #0 crosses crossing
+173.0: TRUCK #1 crosses crossing
+174.0: TRUCK #2 crosses crossing
+175.0: TRUCK #3 crosses crossing
+175.0: TRUCK #5 waits at crossing
+176.0: TRUCK #4 crosses crossing
+177.0: TRUCK #5 crosses crossing
+180.0: TRUCK #12 begins journey
+190.0: TRUCK #6 crosses crossing
+195.0: TRUCK #13 begins journey
+205.0: TRUCK #7 crosses crossing
+210.0: TRUCK #14 begins journey
+213.0: TRAIN arrives at crossing
+220.0: TRUCK #8 waits at crossing
+225.0: TRUCK #15 begins journey
+235.0: TRUCK #9 waits at crossing
+240.0: TRUCK #16 begins journey
+250.0: TRUCK #10 waits at crossing
+255.0: TRUCK #17 begins journey
+265.0: TRUCK #11 waits at crossing
+270.0: TRUCK #18 begins journey
+280.0: TRUCK #12 waits at crossing
+285.0: TRUCK #19 begins journey
+295.0: TRUCK #13 waits at crossing
+300.0: TRUCK #20 begins journey
+302.0: TRAIN leaves crossing
+303.0: TRUCK #8 crosses crossing
+304.0: TRUCK #9 crosses crossing
+305.0: TRUCK #10 crosses crossing
+306.0: TRUCK #11 crosses crossing
+307.0: TRUCK #12 crosses crossing
+308.0: TRUCK #13 crosses crossing
+310.0: TRUCK #14 crosses crossing
+315.0: TRUCK #21 begins journey
+325.0: TRUCK #15 crosses crossing
+330.0: TRUCK #22 begins journey
+340.0: TRUCK #16 crosses crossing
+345.0: TRUCK #23 begins journey
+355.0: TRUCK #17 crosses crossing
+360.0: TRUCK #24 begins journey
+370.0: TRUCK #18 crosses crossing
+375.0: TRUCK #25 begins journey
+376.0: TRAIN arrives at crossing
+385.0: TRUCK #19 waits at crossing
+390.0: TRUCK #26 begins journey
+400.0: TRUCK #20 waits at crossing
+405.0: TRUCK #27 begins journey
+412.0: TRAIN leaves crossing
+413.0: TRUCK #19 crosses crossing
+414.0: TRUCK #20 crosses crossing
+415.0: TRUCK #21 crosses crossing
+420.0: TRUCK #28 begins journey
+430.0: TRUCK #22 crosses crossing
+435.0: TRUCK #29 begins journey
+438.0: TRAIN arrives at crossing
+445.0: TRUCK #23 waits at crossing
+450.0: TRUCK #30 begins journey
+460.0: TRUCK #24 waits at crossing
+465.0: TRUCK #31 begins journey
+475.0: TRUCK #25 waits at crossing
+480.0: TRUCK #32 begins journey
+490.0: TRUCK #26 waits at crossing
+495.0: TRUCK #33 begins journey
+505.0: TRUCK #27 waits at crossing
+510.0: TRUCK #34 begins journey
+520.0: TRUCK #28 waits at crossing
+525.0: TRUCK #35 begins journey
+535.0: TRUCK #29 waits at crossing
+540.0: TRUCK #36 begins journey
+550.0: TRUCK #30 waits at crossing
+555.0: TRUCK #37 begins journey
+564.0: TRAIN leaves crossing
+565.0: TRUCK #23 crosses crossing
+565.0: TRUCK #31 waits at crossing
+566.0: TRUCK #24 crosses crossing
+567.0: TRUCK #25 crosses crossing
+568.0: TRUCK #26 crosses crossing
+569.0: TRUCK #27 crosses crossing
+570.0: TRUCK #28 crosses crossing
+570.0: TRUCK #38 begins journey
+571.0: TRUCK #29 crosses crossing
+572.0: TRUCK #30 crosses crossing
+573.0: TRUCK #31 crosses crossing
+580.0: TRUCK #32 crosses crossing
+585.0: TRUCK #39 begins journey
+595.0: TRUCK #33 crosses crossing
+600.0: TRUCK #40 begins journey
+610.0: TRUCK #34 crosses crossing
+615.0: TRUCK #41 begins journey
+625.0: TRUCK #35 crosses crossing
+627.0: TRAIN arrives at crossing
+630.0: TRUCK #42 begins journey
+640.0: TRUCK #36 waits at crossing
+645.0: TRUCK #43 begins journey
+655.0: TRUCK #37 waits at crossing
+660.0: TRUCK #44 begins journey
+670.0: TRUCK #38 waits at crossing
+675.0: TRUCK #45 begins journey
+685.0: TRUCK #39 waits at crossing
+690.0: TRUCK #46 begins journey
+695.0: TRAIN leaves crossing
+696.0: TRUCK #36 crosses crossing
+697.0: TRUCK #37 crosses crossing
+698.0: TRUCK #38 crosses crossing
+699.0: TRUCK #39 crosses crossing
+700.0: TRUCK #40 crosses crossing
+705.0: TRUCK #47 begins journey
+715.0: TRUCK #41 crosses crossing
+720.0: TRUCK #48 begins journey
+730.0: TRUCK #42 crosses crossing
+735.0: TRUCK #49 begins journey
+745.0: TRUCK #43 crosses crossing
+750.0: TRUCK #50 begins journey
+760.0: TRUCK #44 crosses crossing
+764.0: TRAIN arrives at crossing
+765.0: TRUCK #51 begins journey
+775.0: TRUCK #45 waits at crossing
+780.0: TRUCK #52 begins journey
+790.0: TRUCK #46 waits at crossing
+795.0: TRUCK #53 begins journey
+805.0: TRUCK #47 waits at crossing
+810.0: TRUCK #54 begins journey
+820.0: TRUCK #48 waits at crossing
+825.0: TRUCK #55 begins journey
+828.0: TRAIN leaves crossing
+829.0: TRUCK #45 crosses crossing
+830.0: TRUCK #46 crosses crossing
+831.0: TRUCK #47 crosses crossing
+832.0: TRUCK #48 crosses crossing
+835.0: TRUCK #49 crosses crossing
+840.0: TRUCK #56 begins journey
+850.0: TRUCK #50 crosses crossing
+855.0: TRUCK #57 begins journey
+862.0: TRAIN arrives at crossing
+865.0: TRUCK #51 waits at crossing
+870.0: TRUCK #58 begins journey
+880.0: TRUCK #52 waits at crossing
+885.0: TRUCK #59 begins journey
+895.0: TRUCK #53 waits at crossing
+900.0: TRUCK #60 begins journey
+910.0: TRUCK #54 waits at crossing
+915.0: TRUCK #61 begins journey
+925.0: TRUCK #55 waits at crossing
+930.0: TRUCK #62 begins journey
+940.0: TRUCK #56 waits at crossing
+945.0: TRUCK #63 begins journey
+955.0: TRUCK #57 waits at crossing
+960.0: TRUCK #64 begins journey
+970.0: TRUCK #58 waits at crossing
+975.0: TRUCK #65 begins journey
+985.0: TRUCK #59 waits at crossing
+990.0: TRUCK #66 begins journey
+1000.0: TRUCK #60 waits at crossing
+1004.0: TRAIN leaves crossing
+1005.0: TRUCK #51 crosses crossing
+1005.0: TRUCK #67 begins journey
+1006.0: TRUCK #52 crosses crossing
+1007.0: TRUCK #53 crosses crossing
+1008.0: TRUCK #54 crosses crossing
+1009.0: TRUCK #55 crosses crossing
+1010.0: TRUCK #56 crosses crossing
+1011.0: TRUCK #57 crosses crossing
+1012.0: TRUCK #58 crosses crossing
+1013.0: TRUCK #59 crosses crossing
+1014.0: TRUCK #60 crosses crossing
+1015.0: TRUCK #61 crosses crossing
+1019.0: TRAIN arrives at crossing
+1020.0: TRUCK #68 begins journey
+1030.0: TRUCK #62 waits at crossing
+1035.0: TRUCK #69 begins journey
+1045.0: TRUCK #63 waits at crossing
+1050.0: TRUCK #70 begins journey
+1060.0: TRUCK #64 waits at crossing
+1065.0: TRUCK #71 begins journey
+1072.0: TRUCK #0 completes journey
+1073.0: TRUCK #1 completes journey
+1074.0: TRUCK #2 completes journey
+1075.0: TRUCK #65 waits at crossing
+1075.0: TRUCK #3 completes journey
+1076.0: TRUCK #4 completes journey
+1077.0: TRUCK #5 completes journey
+1080.0: TRUCK #72 begins journey
+1089.0: TRAIN leaves crossing
+1090.0: TRUCK #62 crosses crossing
+1090.0: TRUCK #66 waits at crossing
+1091.0: TRUCK #63 crosses crossing
+1092.0: TRUCK #64 crosses crossing
+1093.0: TRUCK #65 crosses crossing
+1094.0: TRUCK #66 crosses crossing
+1090.0: TRUCK #6 completes journey
+1095.0: TRUCK #73 begins journey
+1105.0: TRUCK #67 crosses crossing
+1105.0: TRUCK #7 completes journey
+1110.0: TRUCK #74 begins journey
+1120.0: TRUCK #68 crosses crossing
+1125.0: TRUCK #75 begins journey
+1135.0: TRUCK #69 crosses crossing
+1140.0: TRUCK #76 begins journey
+1146.0: TRAIN arrives at crossing
+1150.0: TRUCK #70 waits at crossing
+1155.0: TRUCK #77 begins journey
+1165.0: TRUCK #71 waits at crossing
+1170.0: TRUCK #78 begins journey
+1180.0: TRUCK #72 waits at crossing
+1185.0: TRUCK #79 begins journey
+1195.0: TRUCK #73 waits at crossing
+1200.0: TRUCK #80 begins journey
+1203.0: TRUCK #8 completes journey
+1204.0: TRUCK #9 completes journey
+1205.0: TRUCK #10 completes journey
+1206.0: TRUCK #11 completes journey
+1207.0: TRUCK #12 completes journey
+1208.0: TRUCK #13 completes journey
+1210.0: TRUCK #74 waits at crossing
+1210.0: TRUCK #14 completes journey
+1215.0: TRUCK #81 begins journey
+1225.0: TRUCK #75 waits at crossing
+1225.0: TRUCK #15 completes journey
+1230.0: TRUCK #82 begins journey
+1240.0: TRUCK #76 waits at crossing
+1240.0: TRUCK #16 completes journey
+1242.0: TRAIN leaves crossing
+1243.0: TRUCK #70 crosses crossing
+1244.0: TRUCK #71 crosses crossing
+1245.0: TRUCK #72 crosses crossing
+1245.0: TRUCK #83 begins journey
+1246.0: TRUCK #73 crosses crossing
+1247.0: TRUCK #74 crosses crossing
+1248.0: TRUCK #75 crosses crossing
+1249.0: TRUCK #76 crosses crossing
+1255.0: TRUCK #77 crosses crossing
+1255.0: TRUCK #17 completes journey
+1260.0: TRUCK #84 begins journey
+1270.0: TRUCK #18 completes journey
+1270.0: TRUCK #78 crosses crossing
+1275.0: TRUCK #85 begins journey
+1285.0: TRUCK #79 crosses crossing
+1290.0: TRUCK #86 begins journey
+1300.0: TRUCK #80 crosses crossing
+1305.0: TRUCK #87 begins journey
+1313.0: TRUCK #19 completes journey
+1314.0: TRUCK #20 completes journey
+1315.0: TRUCK #21 completes journey
+1315.0: TRUCK #81 crosses crossing
+1320.0: TRUCK #88 begins journey
+1325.0: TRAIN arrives at crossing
+1330.0: TRUCK #22 completes journey
+1330.0: TRUCK #82 waits at crossing
+1335.0: TRUCK #89 begins journey
+1345.0: TRUCK #83 waits at crossing
+1350.0: TRUCK #90 begins journey
+1360.0: TRUCK #84 waits at crossing
+1365.0: TRUCK #91 begins journey
+1375.0: TRUCK #85 waits at crossing
+1380.0: TRUCK #92 begins journey
+1380.0: TRAIN leaves crossing
+1381.0: TRUCK #82 crosses crossing
+1382.0: TRUCK #83 crosses crossing
+1383.0: TRUCK #84 crosses crossing
+1384.0: TRUCK #85 crosses crossing
+1382.0: TRAIN arrives at crossing
+1390.0: TRUCK #86 waits at crossing
+1395.0: TRUCK #93 begins journey
+1405.0: TRUCK #87 waits at crossing
+1410.0: TRUCK #94 begins journey
+1412.0: TRAIN leaves crossing
+1413.0: TRUCK #86 crosses crossing
+1414.0: TRUCK #87 crosses crossing
+1420.0: TRUCK #88 crosses crossing
+1425.0: TRUCK #95 begins journey
+1435.0: TRUCK #89 crosses crossing
+1440.0: TRUCK #96 begins journey
+1448.0: TRAIN arrives at crossing
+1450.0: TRUCK #90 waits at crossing
+1455.0: TRUCK #97 begins journey
+1465.0: TRUCK #91 waits at crossing
+1465.0: TRUCK #23 completes journey
+1466.0: TRUCK #24 completes journey
+1467.0: TRUCK #25 completes journey
+1468.0: TRUCK #26 completes journey
+1469.0: TRUCK #27 completes journey
+1470.0: TRUCK #98 begins journey
+1470.0: TRUCK #28 completes journey
+1471.0: TRUCK #29 completes journey
+1472.0: TRUCK #30 completes journey
+1473.0: TRUCK #31 completes journey
+1480.0: TRUCK #92 waits at crossing
+1480.0: TRUCK #32 completes journey
+1485.0: TRUCK #99 begins journey
+1492.0: TRAIN leaves crossing
+1493.0: TRUCK #90 crosses crossing
+1494.0: TRUCK #91 crosses crossing
+1495.0: TRUCK #92 crosses crossing
+1495.0: TRUCK #33 completes journey
+1495.0: TRUCK #93 crosses crossing
+1500.0: TRUCK #100 begins journey
+1510.0: TRUCK #94 crosses crossing
+1510.0: TRUCK #34 completes journey
+1515.0: TRUCK #101 begins journey
+1525.0: TRUCK #35 completes journey
+1525.0: TRUCK #95 crosses crossing
+1530.0: TRUCK #102 begins journey
+1540.0: TRUCK #96 crosses crossing
+1545.0: TRUCK #103 begins journey
+1555.0: TRUCK #97 crosses crossing
+1560.0: TRUCK #104 begins journey
+1570.0: TRUCK #98 crosses crossing
+1575.0: TRUCK #105 begins journey
+1585.0: TRUCK #99 crosses crossing
+1590.0: TRUCK #106 begins journey
+1596.0: TRUCK #36 completes journey
+1597.0: TRUCK #37 completes journey
+1598.0: TRUCK #38 completes journey
+1599.0: TRUCK #39 completes journey
+1600.0: TRUCK #100 crosses crossing
+1600.0: TRUCK #40 completes journey
+1605.0: TRUCK #107 begins journey
+1615.0: TRUCK #41 completes journey
+1615.0: TRUCK #101 crosses crossing
+1620.0: TRUCK #108 begins journey
+1630.0: TRUCK #42 completes journey
+1630.0: TRUCK #102 crosses crossing
+1635.0: TRUCK #109 begins journey
+1645.0: TRUCK #43 completes journey
+1645.0: TRUCK #103 crosses crossing
+1650.0: TRUCK #110 begins journey
+1660.0: TRUCK #44 completes journey
+1660.0: TRUCK #104 crosses crossing
+1665.0: TRUCK #111 begins journey
+1675.0: TRUCK #105 crosses crossing
+1680.0: TRUCK #112 begins journey
+1690.0: TRUCK #106 crosses crossing
+1705.0: TRUCK #107 crosses crossing
+1720.0: TRUCK #108 crosses crossing
+1729.0: TRUCK #45 completes journey
+1730.0: TRUCK #46 completes journey
+1731.0: TRUCK #47 completes journey
+1732.0: TRUCK #48 completes journey
+1735.0: TRUCK #109 crosses crossing
+1735.0: TRUCK #49 completes journey
+1750.0: TRUCK #110 crosses crossing
+1750.0: TRUCK #50 completes journey
+1765.0: TRUCK #111 crosses crossing
+1780.0: TRUCK #112 crosses crossing
+1905.0: TRUCK #51 completes journey
+1906.0: TRUCK #52 completes journey
+1907.0: TRUCK #53 completes journey
+1908.0: TRUCK #54 completes journey
+1909.0: TRUCK #55 completes journey
+1910.0: TRUCK #56 completes journey
+1911.0: TRUCK #57 completes journey
+1912.0: TRUCK #58 completes journey
+1913.0: TRUCK #59 completes journey
+1914.0: TRUCK #60 completes journey
+1915.0: TRUCK #61 completes journey
+1990.0: TRUCK #62 completes journey
+1991.0: TRUCK #63 completes journey
+1992.0: TRUCK #64 completes journey
+1993.0: TRUCK #65 completes journey
+1994.0: TRUCK #66 completes journey
+2005.0: TRUCK #67 completes journey
+2020.0: TRUCK #68 completes journey
+2035.0: TRUCK #69 completes journey
+2143.0: TRUCK #70 completes journey
+2144.0: TRUCK #71 completes journey
+2145.0: TRUCK #72 completes journey
+2146.0: TRUCK #73 completes journey
+2147.0: TRUCK #74 completes journey
+2148.0: TRUCK #75 completes journey
+2149.0: TRUCK #76 completes journey
+2155.0: TRUCK #77 completes journey
+2170.0: TRUCK #78 completes journey
+2185.0: TRUCK #79 completes journey
+2200.0: TRUCK #80 completes journey
+2215.0: TRUCK #81 completes journey
+2281.0: TRUCK #82 completes journey
+2282.0: TRUCK #83 completes journey
+2283.0: TRUCK #84 completes journey
+2284.0: TRUCK #85 completes journey
+2313.0: TRUCK #86 completes journey
+2314.0: TRUCK #87 completes journey
+2320.0: TRUCK #88 completes journey
+2335.0: TRUCK #89 completes journey
+2393.0: TRUCK #90 completes journey
+2394.0: TRUCK #91 completes journey
+2395.0: TRUCK #93 completes journey
+2395.0: TRUCK #92 completes journey
+2410.0: TRUCK #94 completes journey
+2425.0: TRUCK #95 completes journey
+2440.0: TRUCK #96 completes journey
+2455.0: TRUCK #97 completes journey
+2470.0: TRUCK #98 completes journey
+2485.0: TRUCK #99 completes journey
+2500.0: TRUCK #100 completes journey
+2515.0: TRUCK #101 completes journey
+2530.0: TRUCK #102 completes journey
+2545.0: TRUCK #103 completes journey
+2560.0: TRUCK #104 completes journey
+2575.0: TRUCK #105 completes journey
+2590.0: TRUCK #106 completes journey
+2605.0: TRUCK #107 completes journey
+2620.0: TRUCK #108 completes journey
+2635.0: TRUCK #109 completes journey
+2650.0: TRUCK #110 completes journey
+2665.0: TRUCK #111 completes journey
+2680.0: TRUCK #112 completes journey
+
+STATS
+-----
+TRUCK #0 total trip time: 1072.0 minutes
+TRUCK #1 total trip time: 1058.0 minutes
+TRUCK #2 total trip time: 1044.0 minutes
+TRUCK #3 total trip time: 1030.0 minutes
+TRUCK #4 total trip time: 1016.0 minutes
+TRUCK #5 total trip time: 1002.0 minutes
+TRUCK #6 total trip time: 1000.0 minutes
+TRUCK #7 total trip time: 1000.0 minutes
+TRUCK #8 total trip time: 1083.0 minutes
+TRUCK #9 total trip time: 1069.0 minutes
+TRUCK #10 total trip time: 1055.0 minutes
+TRUCK #11 total trip time: 1041.0 minutes
+TRUCK #12 total trip time: 1027.0 minutes
+TRUCK #13 total trip time: 1013.0 minutes
+TRUCK #14 total trip time: 1000.0 minutes
+TRUCK #15 total trip time: 1000.0 minutes
+TRUCK #16 total trip time: 1000.0 minutes
+TRUCK #17 total trip time: 1000.0 minutes
+TRUCK #18 total trip time: 1000.0 minutes
+TRUCK #19 total trip time: 1028.0 minutes
+TRUCK #20 total trip time: 1014.0 minutes
+TRUCK #21 total trip time: 1000.0 minutes
+TRUCK #22 total trip time: 1000.0 minutes
+TRUCK #23 total trip time: 1120.0 minutes
+TRUCK #24 total trip time: 1106.0 minutes
+TRUCK #25 total trip time: 1092.0 minutes
+TRUCK #26 total trip time: 1078.0 minutes
+TRUCK #27 total trip time: 1064.0 minutes
+TRUCK #28 total trip time: 1050.0 minutes
+TRUCK #29 total trip time: 1036.0 minutes
+TRUCK #30 total trip time: 1022.0 minutes
+TRUCK #31 total trip time: 1008.0 minutes
+TRUCK #32 total trip time: 1000.0 minutes
+TRUCK #33 total trip time: 1000.0 minutes
+TRUCK #34 total trip time: 1000.0 minutes
+TRUCK #35 total trip time: 1000.0 minutes
+TRUCK #36 total trip time: 1056.0 minutes
+TRUCK #37 total trip time: 1042.0 minutes
+TRUCK #38 total trip time: 1028.0 minutes
+TRUCK #39 total trip time: 1014.0 minutes
+TRUCK #40 total trip time: 1000.0 minutes
+TRUCK #41 total trip time: 1000.0 minutes
+TRUCK #42 total trip time: 1000.0 minutes
+TRUCK #43 total trip time: 1000.0 minutes
+TRUCK #44 total trip time: 1000.0 minutes
+TRUCK #45 total trip time: 1054.0 minutes
+TRUCK #46 total trip time: 1040.0 minutes
+TRUCK #47 total trip time: 1026.0 minutes
+TRUCK #48 total trip time: 1012.0 minutes
+TRUCK #49 total trip time: 1000.0 minutes
+TRUCK #50 total trip time: 1000.0 minutes
+TRUCK #51 total trip time: 1140.0 minutes
+TRUCK #52 total trip time: 1126.0 minutes
+TRUCK #53 total trip time: 1112.0 minutes
+TRUCK #54 total trip time: 1098.0 minutes
+TRUCK #55 total trip time: 1084.0 minutes
+TRUCK #56 total trip time: 1070.0 minutes
+TRUCK #57 total trip time: 1056.0 minutes
+TRUCK #58 total trip time: 1042.0 minutes
+TRUCK #59 total trip time: 1028.0 minutes
+TRUCK #60 total trip time: 1014.0 minutes
+TRUCK #61 total trip time: 1000.0 minutes
+TRUCK #62 total trip time: 1060.0 minutes
+TRUCK #63 total trip time: 1046.0 minutes
+TRUCK #64 total trip time: 1032.0 minutes
+TRUCK #65 total trip time: 1018.0 minutes
+TRUCK #66 total trip time: 1004.0 minutes
+TRUCK #67 total trip time: 1000.0 minutes
+TRUCK #68 total trip time: 1000.0 minutes
+TRUCK #69 total trip time: 1000.0 minutes
+TRUCK #70 total trip time: 1093.0 minutes
+TRUCK #71 total trip time: 1079.0 minutes
+TRUCK #72 total trip time: 1065.0 minutes
+TRUCK #73 total trip time: 1051.0 minutes
+TRUCK #74 total trip time: 1037.0 minutes
+TRUCK #75 total trip time: 1023.0 minutes
+TRUCK #76 total trip time: 1009.0 minutes
+TRUCK #77 total trip time: 1000.0 minutes
+TRUCK #78 total trip time: 1000.0 minutes
+TRUCK #79 total trip time: 1000.0 minutes
+TRUCK #80 total trip time: 1000.0 minutes
+TRUCK #81 total trip time: 1000.0 minutes
+TRUCK #82 total trip time: 1051.0 minutes
+TRUCK #83 total trip time: 1037.0 minutes
+TRUCK #84 total trip time: 1023.0 minutes
+TRUCK #85 total trip time: 1009.0 minutes
+TRUCK #86 total trip time: 1023.0 minutes
+TRUCK #87 total trip time: 1009.0 minutes
+TRUCK #88 total trip time: 1000.0 minutes
+TRUCK #89 total trip time: 1000.0 minutes
+TRUCK #90 total trip time: 1043.0 minutes
+TRUCK #91 total trip time: 1029.0 minutes
+TRUCK #92 total trip time: 1015.0 minutes
+TRUCK #93 total trip time: 1000.0 minutes
+TRUCK #94 total trip time: 1000.0 minutes
+TRUCK #95 total trip time: 1000.0 minutes
+TRUCK #96 total trip time: 1000.0 minutes
+TRUCK #97 total trip time: 1000.0 minutes
+TRUCK #98 total trip time: 1000.0 minutes
+TRUCK #99 total trip time: 1000.0 minutes
+TRUCK #100 total trip time: 1000.0 minutes
+TRUCK #101 total trip time: 1000.0 minutes
+TRUCK #102 total trip time: 1000.0 minutes
+TRUCK #103 total trip time: 1000.0 minutes
+TRUCK #104 total trip time: 1000.0 minutes
+TRUCK #105 total trip time: 1000.0 minutes
+TRUCK #106 total trip time: 1000.0 minutes
+TRUCK #107 total trip time: 1000.0 minutes
+TRUCK #108 total trip time: 1000.0 minutes
+TRUCK #109 total trip time: 1000.0 minutes
+TRUCK #110 total trip time: 1000.0 minutes
+TRUCK #111 total trip time: 1000.0 minutes
+TRUCK #112 total trip time: 1000.0 minutes
+
+TRUCK AVG TRIP TIME: 1026.0 minutes
+TRUCK TOTAL TIME: 2680.0 minutes
+
+DRONE TRIP TIME: 60.0 minutes
+DRONE TOTAL TIME: 1182.0 minutes
+
+TOTAL TIME: 2680.0 minutes
+BUILD SUCCESSFUL (total time: 0 seconds)

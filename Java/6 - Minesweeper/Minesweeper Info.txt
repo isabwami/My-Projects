@@ -1,0 +1,11 @@
+Beginner:
+	Board = 9 x 9
+	Mines = 10
+
+Intermediate:
+	Board = 16 x 16
+	Mines = 40
+
+Expert: 
+	Board = 16 x 30
+	Mines = 99

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://pilot.wright.edu/content/202330-202380/698585-4M202430/Projects/Project6.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project #6</title>
+<link rel="stylesheet" href="./Project #6_files/styles.css" type="text/css">
+
+<script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/6605/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="./Project #6_files/mathjax.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+							elm.setAttribute('style', 'display: block; height: 0.5rem;');
+						});
+
+						window.D2L.MathJax.loadMathJax({
+							'outputScale': 1.5,
+							'renderLatex': false
+						});
+					}
+				});</script><script src="./Project #6_files/prism.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head>
+<body>
+<div id="content">
+<p class="course">CS 3100 – <i>Data Structures and Algorithms</i></p>
+<h1>Project #6 – Array-based Heap</h1>
+<h2>Learning Objectives</h2>
+<ul>
+<li>Implement a data structure to meet given specifications.</li>
+<li>Design, implement, and use a priority queue implemented as an array-based heap.</li>
+</ul>
+
+<h2>Overview</h2>
+<p>Your task for this assignment is to build a priority queue implemented as a 
+	MAX-HEAP of integers that uses an expandable array for data storage.
+</p>
+
+
+<h2>The MaxHeap class</h2>
+<p>Your Heap class should contain an <b>array</b> (not a vector) of integers.  The initial size of the array
+	should be #defined in your MaxHeap.h file as #define HEAP_MIN_SIZE 20.  If the heap becomes full, the
+    array size should be doubled. If the heap becomes less than half full (but larger than HEAP_MIN_SIZE) the size of
+    the array should be halved.</p>
+
+<p>As usual, your heap should be defined in two files: MaxHeap.h and MaxHeap.cpp.
+	Your class should support the following operations:
+
+</p><ul>
+    <li><b><tt>void MaxHeap::offer(int value)</tt></b> – Insert a new value into the heap.  Duplicate keys are allowed.
+	</li><br>
+	
+	<li><b><tt>int MaxHeap::poll(int value)</tt></b> – Removes and returns the maximum value in the heap.  If the heap
+		is empty, this method should throw an exception.
+		</li><br>
+	
+	<li><b><tt>bool MaxHeap::isEmpty() const</tt></b> – Returns <b><tt>true</tt></b> if the heap is empty, and <tt><b>false</b></tt>
+		otherwise.</li><br>
+
+	<li><b><tt>int MaxHeap::peek() const</tt></b> ‐ Returns the maximum value in the heap without removing it.  If 
+	    the heap is empty, this method should throw an exception.</li><br>
+
+	<li><b><tt>vector&lt;int&gt; MaxHeap::sorted() const</tt></b> ‐ Creates and returns a vector of integers containing the heap
+		elements sorted in largest to smallest order.  If the heap is empty, this method should return an empty vector.
+			<i>	A good approach for implementing this method would be to copy the heap contents into a new vector, and then
+			perform heapsort on the copy.</i>
+		
+	</li><br>
+
+	<li>Your heap class should include the following two constructors:
+		<ul>
+			<li><tt><b>MaxHeap::MaxHeap()</b></tt> ‐ Creates an empty MaxHeap of size HEAP_MIN_SIZE.</li>
+			<li><tt><b>MaxHeap::MaxHeap(int * values, int count)</b></tt> ‐ Creates a new heap by copying the array
+				<tt><b>values</b></tt> and then using the heapify algorithm to convert the values to a maxheap.
+				This method must use heapify and must run in <i>O(n)</i> time.</li>
+		</ul>
+	</li>
+	
+	<li>As usual, your class should have an appropriate copy constructor and should overload <b><tt>operator=</tt></b>
+	    to produce an independent copy of your heap.</li><br>
+	
+	<li>Your MaxHeap class should also overload <tt><b>operator&lt;&lt;</b></tt> such that <tt><b>cout &lt;&lt; myHeap;</b></tt>
+		prints the heap in the order in which it is stored in the array (NOT in sorted order).</li><br>
+
+	<li>In addition to the methods listed above, you may create any additional private methods that help in your class
+		implementation.  Some possibilities include <tt><b>int getParent(int); int getLeftChild(int);</b></tt> and
+		<tt><b>int getRightChild(int);</b></tt>
+	</li><br>
+
+	<li>You will also need to create a test harness that creates multiple heaps and thoroughly tests all of the above methods
+		and requirements.  Additionally, in order to work with my test harness, your method declarations <b>must match
+			the method signatures given above exactly.</b>
+	</li>
+</ul>
+
+<h2>Turn in and Grading</h2>
+<p>Please zip your entire project directory
+into a single file called Project6.zip.</p>
+
+<p>This project is worth 50 points, distributed as follows:</p>
+<table class="table_stripes" border="1" cellspacing="0" cellpadding="0" style="width: 100%;">
+<tbody>
+<tr>
+<td><b>Task</b></td>
+<td style="text-align: center;"><b>Points</b></td>
+</tr>
+<tr>
+	<td><b><tt>MaxHeap::MaxHeap()</tt></b> Correctly correctly creates an empty heap. <br>
+		<b><tt>MaxHeap::MaxHeap(int * values, int count)</tt></b> Correctly creates a heap in <i>O(n)</i> time by
+		heapifying a copy of the array <tt><b>values</b></tt>.</td>
+	<td style="text-align: center;">5</td>
+</tr>
+<tr><td><b><tt>MaxHeap::offer</tt></b> Correctly inserts items into the heap, maintaining the MAX-HEAP property at all
+times.</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td><b><tt>MaxHeap::poll</tt></b> Correctly removes and returns the maximum value in the heap, maintaining the
+	MAX-HEAP property at all times, and throws and exception when called on an empty heap.</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td>Your heap correctly doubles in size when full.  Your heap is never smaller than HEAP_MIN_SIZE,
+	and never more than half-empty unless it cannot be halved without
+	becoming smaller than HEAP_MIN_SIZE.
+</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td><b><tt>MaxHeap::isEmpty</tt></b> correctly returns true when the heap is emtpy, and false otherwise.</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td><b><tt>MaxHeap::peek</tt></b> correctly returns the maximum value in the heap without modifying the heap contents.</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td><b><tt>MaxHeap::sorted</tt></b> correctly creates and returns a sorted vector from the heap contents.</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td><b><tt>MaxHeap::operator=</tt></b> and your copy constructor correctly produce independent copies of your heap.</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td><b><tt>operator&lt;&lt;</tt></b> is correctly overloaded for your heap class as described above.</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td>Code is well organized, well documented, and properly formatted. Variable names are clear, and
+readable.  Classes are declared and implemented in seperate (.cpp and .h) files.</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td>Appropriate use of public and private class member data.  No global variables or unnecessary
+member variables.  Efficient and well-designed code.  No memory leaks.</td>
+<td style="text-align: center;">5</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</body></html>

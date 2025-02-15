@@ -1,0 +1,24 @@
+            // Event e = pq.poll()
+            // sim clock updates at the time of each event
+            // simClock = e.getTime()
+            // if e.instanceof [EVENT_NAME]
+                // truck start
+                    // print summary
+                // train block
+                    // print summary
+                    // isBlocking true
+                // truck at crossing - 
+                    // if isBlocking or if !waitingTrucks.isEmpty
+                        // put truck in other data structure and keep track of truck order of waiting trucks
+                    // otherwise 
+                        // print truck is crossing    
+                        // create truck end event (using simClock time, speed, distance to end)
+                // train no block
+                    // isBlocking false
+                    // if !waitingTrucks.isEmpty
+                        // poll first truck and make cross event
+                    // print summary
+
+        // print stats
+
+83-87 wrong end times 

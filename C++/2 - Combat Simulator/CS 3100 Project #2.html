@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CS 3100 Project #2</title>
+<link rel="stylesheet" href="../template_files/styles.css" type="text/css">
+
+<script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/6605/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="https://s.brightspace.com/lib/bsi/20.24.1-233/unbundled/mathjax.js?v=20.24.1.18763" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+							elm.setAttribute('style', 'display: block; height: 0.5rem;');
+						});
+
+						window.D2L.MathJax.loadMathJax({
+							'outputScale': 1.5,
+							'renderLatex': false
+						});
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/20.24.1-233/unbundled/prism.js?v=20.24.1.18763" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head>
+<body>
+<div id="content">
+<p class="course">CS 3100 &ndash; <i>Data Structures and Algorithms</i></p>
+<h1>Project #2 &ndash; FIGHT!</h1>
+<h2>Learning Objectives</h2>
+<ul>
+<li>Apply object-oriented programming concepts in C++</li>
+</ul>
+<h2>Overview</h2>
+<p>In this project, you will build a combat simulator for a simplified roll playing game (RPG).  You will create a C++ class for characters
+in the game, including the character's name, hit points, armor class, and so forth.  You will then create two character objects and simulate
+a combat between them.</p>
+<h2>The Character Class</h2>
+<p>You should define a C++ class called Character that implements an RPG character in the files <tt><b>character.h</b></tt>
+and <tt><b>character.cpp</b></tt></p>
+<h3>Character Data</h3>
+<p>Your character class should contain the following <i>private</i> member data:
+<ul>
+<li> Name (string) &ndash; the character's name.</li>
+<li> Role (string) &ndash; the type of character (e.g. wizard, fighter, rogue, etc.).</li>
+<li> Hit points (int) &ndash; this is the character's current health.  When it reaches zero, the character is dead.</li>
+<li> Attack bonus (int) &ndash; this value is added to a character's attack roll to determine if an attack hits.</li>
+<li> Damage bonus (int) &ndash; this value is added to a character's damage roll when attacking.</li>
+<li> Armor class (int) &ndash; this value determines how hard a character is to hit.</li>
+</ul></p>
+<h3>Character member functions</h3>
+<p>Your Character class should implement, minimally, the following member functions (methods):
+<ul>
+<li> <tt><b>print(ostream&)</b></tt> &ndash; print the character to the given ostream</li>
+<li> <tt><b>attack(Character &otherCharacter)</b></tt> &ndash; attack another character (see below for details)</li>
+<li> <tt><b>damage(int amount)</b></tt> &ndash; subtract <i>amount</i> from the character's current hit points <i>(Note:  the minimum
+            hit point value should be zero, so you will need to check for negative results)</i></li>
+<li> <tt><b>getHealth()</b></tt> &ndash; return the character's current health</li>
+<li> <tt><b>getName()</b></tt> &ndash; return the character's name</li>
+<li> <tt><b>getRole()</b></tt> &ndash; return the character's role</li>
+</ul></p>
+<h2>Attacking another character</h2>
+<p> You should implement a member function for attacking another character.  To have character1 attack character2, for example,
+you would call <tt><b>character1.attack(character2);</b></tt>  When the attack member function is called, the following steps should be taken:
+<ol>
+<li> Roll a 20-sided die (i.e. generate a random number from 1 to 20) and add the attacking character's attack bonus.</li>
+<li> If the result is equal to or higher than the opponent's armor class, then the attack hits. Otherwise it misses.</li>
+<li> <i>If</i> the attack hits, roll a 10-sided die and add the attacking character's damage bonus.  Subtract the resulting amount
+     from the opponent's hit points using the damage() method.</li>
+</ol></p>
+<h2>Program Operation</h2>
+<p>Your main program should be implemented in the file <tt><b>project2.cpp</b></tt>.  Your program should prompt the user for
+character details (name, role, hit points, etc.) for two characters.  It should then simulate
+combat between the two characters until one of the two characters reaches zero hit points.</p>
+
+<h3>Example of Program Execution</h3>
+<p>
+<blockquote class="code">
+<pre>First character name?
+Uglar
+
+Uglar's role?
+Barbarian
+
+Uglar the Barbarian's hit points?
+80
+
+Uglar the Barbarian's attack bonus?
+5
+
+Uglar the Barbarian's damage bonus?
+5
+
+Uglar the Barbarian's armor class?
+24
+
+Character summary
+-----------------
+Uglar the Barbarian
+HP: 80
+AB: 5
+DB: 5
+AC: 24 
+
+Second character name?
+Zimzizz
+
+Zimzizz's role?
+Wizard
+
+Zimzizz the Wizard's hit points?
+40
+
+Zimzizz the Wizard's attack bonus?
+5
+
+Zimzizz the Wizard's damage bonus?
+15
+
+Zimzizz the Wizard's armor class?
+18
+
+Character summary
+-----------------
+Zimzizz the Wizard
+HP: 40
+AB: 5
+DB: 15
+AC: 18
+
+Simulated Combat:
+Uglar attacks!
+Attack roll: 14 + 5 = 19 --> HIT!
+Damage: 9 + 5 = 14
+Zimzizz has 26 hit points remaining
+
+Zimzizz attacks!
+Attack roll: 17 + 5 = 22 --> MISS!
+
+Uglar attacks!
+Attack roll: 13 + 5 = 18 --> HIT!
+Damage: 8 + 5 = 13
+Zimzizz has 13 hit points remaining
+
+Zimzizz attacks!
+Attack roll: 19 + 5 = 24 --> HIT!
+Damage:  8 + 15 = 23
+Uglar has 57 hit points remaining
+
+Uglar attacks!
+Attack roll: 16 + 5 = 21 --> HIT!
+Damage: 9 + 5 = 14
+Zimzizz has 0 hit points remaining
+
+Uglar wins!
+</pre>
+</blockquote></p>
+
+</ul>
+<h2>Turn in and Grading</h2>
+<p>Please upload your <tt><b>project2.cpp</b></tt>, <tt><b>character.h</b></tt>, and <tt><b>character.cpp</b></tt> files.  Do not
+zip, archive, or compress your files.</p>
+<p>This project is worth 10 points, distributed as follows:</p>
+<table class="table_stripes" border="1" cellspacing="0" cellpadding="0" style="width: 100%;">
+<tbody>
+<tr>
+<td><b>Task</b></td>
+<td style="text-align: center;"><b>Points</b></td>
+</tr>
+<tr>
+<td>Program compiles, runs, and produces correct output</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td>The character class is correctly defined in a .h and .cpp file as described above</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td>The character class includes all member data and member functions described above</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>Program conforms to coding standards (see <i>CS 3100 Coding Standards</i> in the Content/Handouts
+section of our class Pilot page)</td>
+<td style="text-align: center;">3</td>
+</tr>
+</div>
+</body>
+</html>

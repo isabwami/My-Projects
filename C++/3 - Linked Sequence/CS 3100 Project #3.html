@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CS 3100 Project #3</title>
+<link rel="stylesheet" href="../template_files/styles.css" type="text/css">
+
+<script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/6605/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="https://s.brightspace.com/lib/bsi/20.24.1-233/unbundled/mathjax.js?v=20.24.1.18763" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+							elm.setAttribute('style', 'display: block; height: 0.5rem;');
+						});
+
+						window.D2L.MathJax.loadMathJax({
+							'outputScale': 1.5,
+							'renderLatex': false
+						});
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/20.24.1-233/unbundled/prism.js?v=20.24.1.18763" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head>
+<body>
+<div id="content">
+<p class="course">CS 3100 &ndash; <i>Data Structures and Algorithms</i></p>
+<h1>Project #3 &ndash; Linked Sequence Data Structure</h1>
+<h2>Learning Objectives</h2>
+<ul>
+<li>Apply object-oriented programming concepts in C++</li>
+<li>Design and implement a data structure for a specified abstract data type</li>
+<li>Use pointers and appropriate memory management methods in C++</li>
+</ul>
+<h2>Overview</h2>
+<p>Many languages include &ldquo;enhanced&rdquo; array classes that include features of both
+arrays and linked-lists.  The Java ArrayList class and the Vector class from the C++
+standard template library are examples.  For this project, you will constructe a Sequence
+class that supports random access like an array, but also allows dynamic insertion
+and removal of new elements.
+</p>
+
+<h2>The Sequence Class</h2>
+<p>Your Sequence Class should be implemented as a doubly-linked list.  Here are a few
+example of how your Sequence class will be used:</p>
+<blockquote class="code">
+<pre>Sequence mySequence(5);  // create a Sequence of length 5 (indexes 0 through 4)
+mySequence[0] = 1;
+mySequence[1] = 2;
+mySequence[4] = 3;
+</pre>
+</blockquote>
+<p>After executing this code block, your sequence would appear as follows:</p>
+
+<p>
+<table class="table_stripes" border="1" cellspacing="0" cellpadding="0" style="table-layout: fixed; width: 100%;">
+<tbody>
+<tr>
+<td><b>Index</b></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td><b>Content<b></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><i>?</i></td>
+<td style="text-align: center;"><i>?</i></td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<p><i>Note:  Sequence locations with a content of <i>?</i> can contain any value.</i></p>
+<p>The push_back() member function grows the Sequence by adding values to the end. The call
+<tt><b>mySequence.push_back(20)</b></tt> produces:</p>
+
+<p>
+<table class="table_stripes" border="1" cellspacing="0" cellpadding="0" style="table-layout: fixed; width: 100%;">
+<tbody>
+<tr>
+<td><b>Index</b></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td><b>Content<b></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><i>?</i></td>
+<td style="text-align: center;"><i>?</i></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">20</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<p>We can also grow the Sequence using the insert() member function.  The first argument to insert is the index (position) at which to insert the new data.  The second argument is the data to insert.  The data is inserted at the designated position, and the remaining items in the sequence are shifted to the right.  Starting with the previous Sequence, <tt><b>mySequence.insert(1, 30)</b></tt> would produce:</p>
+
+<p>
+<table class="table_stripes" border="1" cellspacing="0" cellpadding="0" style="table-layout: fixed; width: 100%;">
+<tbody>
+<tr>
+<td><b>Index</b></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td><b>Content<b></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><i>?</i></td>
+<td style="text-align: center;"><i>?</i></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">20</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<p>We can reduce the size of the Sequence using pop_back(), which removes the last element of the Sequence, or erase().  The call <tt><b>mySequence.erase(3,2)</b></tt> removes 2 items starting at position 3, producing:<p>
+
+<p>
+<table class="table_stripes" border="1" cellspacing="0" cellpadding="0" style="table-layout: fixed; width: 100%;">
+<tbody>
+<tr>
+<td><b>Index</b></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td><b>Content<b></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">20</td>
+</tr>
+</tbody>
+</table>
+</p>
+
+<h2>Required Member Functions</h2>
+
+<p>You will be provided a starting template for your sequence, implemented
+in the files <tt><b>Sequence.h</b></tt> and <tt><b>Sequence.cpp</b></tt>.  You must
+implement each of the functions defined in these files.  A full description
+of each function is given in the header file (<tt><b>Sequence.h</b></tt>).
+
+<h2>Error Handling</h2>
+<p>Your solution should throw an exception if a user attempts to access an item outside
+of the bounds of the sequence in any member function.  For example, each of the following calls
+after the Sequence of length three is created should throw an exception:
+
+<blockquote class="code">
+<pre>Sequence mySequence(3);          // mySequence has elements 0 through 2
+mySequence[3] = 100;             // Error: There is no element 3
+cout << mySequence[-1] << endl;  // Another error
+mySequence.erase(2,5);           // Error: Tries to erase non-existent elements
+</pre>
+</blockquote>
+
+You can throw a C++ exception using the following syntax:
+<blockquote class="code">
+<pre>#include &lt;exception&gt;
+
+Sequence::value_type& Sequence::operator[]( index_type position )
+{
+  if ( index position is invalid ) {
+    throw exception();
+  }
+  ...
+}
+</pre>
+</blockquote>
+
+<h2>The Test Harness</h2>
+<p>For this project (only), you will be provided with the entire test harness that
+I will use to test your code.  The number of points allocated for passing each test
+is given in the grading rubric at the end of this assignment.</p>
+
+<h2>Documentation and Style</h2>
+<p><i>CS 3100</i> is the capstone programming course of your academic career.  You should
+employ professional best practices in your coding and documentation.  These practices include:
+<ul>
+<li><b>Descriptive variable names</b> &ndash; Avoid variable names like <tt><b>p</b></tt> and
+<tt><b>temp</b></tt>.  Use names that describe the purpose of the variable.  Use either underscores
+or camelCase for multiple-word names.  Examples of appropriate variable names include:
+<tt><b>currentNode</b></tt>, <tt><b>toBeDeleted</b></tt>, and <tt><b>studentList</b></tt>.
+<i>Exception: It is generally acceptable to use single-letter variables, such as <tt>i</tt>,
+as loop indices in <tt><b>for</b></tt> loops.</i></li>
+<li><b>Function header comments</b> &ndash; At a minimum should include the name of the
+function, its purpose, a list of input parameters, the return value, and any side effects.
+</li>
+<li><b>Whitespace and inline comments</b> &ndash; Code should be broken into blocks of ~5
+to 20 lines of code, separated by whitespace, and annotated with inline comments.  Any
+particularly hard to understand lines of code should have an explanatory inline comment</li>
+</ul>
+<h3>Example of appropriate code style</h3>
+<blockquote class="code">
+<pre>
+	// Function:  addGrade -- add a grade to a Student object
+	// Inputs:    theGrade -- grade to be added (char)
+	// Returns:   boolean -- true if successful, false if
+	//                       unable to add grade
+	// Side effects:  The new grade is added to the linked
+	//                list of grades for the Student object
+
+	bool Student::addGrade(char theGrade) {
+
+	// Create a new linked list node with the
+	// grade to be added
+	GradeNode *newGrade, *currentGrade;
+	newGrade = new GradeNode();
+	newGrade->grade = theGrade;
+
+	try {
+		// If the list is empty, point head at
+		// the new grade node
+		if (!head) {
+			head = newGrade;
+		}
+		
+		// Otherwise find the last node in the list,
+		// and point its next pointer at the new
+		// grade node.
+		else {
+			currentGrade = head;
+			while (currentGrade->next) {
+				currentGrade = currentGrade->next;
+			}
+			currentGrade->next = newGrade;
+		}
+	}
+	
+	// If unsuccessful for any reason, return false
+	catch(exception &e){
+		return false;
+	}
+	
+	// If successful return true
+	return true;
+}
+</pre>
+</blockquote>
+
+<h2>Turn in and Grading</h2>
+<ul>
+<li>Your Sequence class should be implemented as a separate .h and .cpp file.</li>
+<li>If you define other classes, (such as SequenceNode) you may use a separate
+ class, or a class defined entirely within Class Sequence.</li>
+<li>Zip your entire project directory and turn it in via pilot.  Make sure that all your files are included.
+</li><!---
+To find your project directory, find the Solution Explorer in visual studio (usually in the upper-right portion of the Visual Studio window) and right-click on the Solution: </li>
+<p><img src="Capture1.jpg" alt="See instructor for details"></p>
+<p>In the context menu that appears, select &ldquo;Open Folder in File Explorer&rdquo;:</p>
+<p><img src="Capture2.jpg" alt="See instructor for details"></p>
+<p>Zip and submit the folder with the same name as your project.</p>
+--->
+</ul>
+
+<p><b>Code that will not compile will receive a grade of zero.</b></p>
+
+<p>This Project is worth 50 points, distributed as follows:</p>
+<table class="table_stripes" border="1" cellspacing="0" cellpadding="0" style="width: 100%;">
+<tbody>
+<tr>
+<td><b>Test</b></td>
+<td style="text-align: center;"><b>Points</b></td>
+</tr>
+<tr>
+<td>Can correctly create a Sequence, modify items with the [] operator, and print
+the contents of the sequence with the &lt;&lt; operator</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td>Can create multiple, independent Sequence objects and print them</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td><tt><b>push_back()()</b></tt> correctly adds to the end of an existing Sequence</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td><tt><b>push_back()</b></tt> can add elements to an empty Sequence</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td><tt><b>pop_back()</b></tt> correctly removes the last element of a Sequence</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td><tt><b>pop_back()</b></tt> on an empty Sequence throws an exception</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><tt><b>insert()</b></tt> correctly adds an element in the correct position of an existing Sequence</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td><tt><b>insert()</b></tt> throws an exception when called with an invalid index</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><tt><b>front()</b></tt> correctly returns the first element of a Sequence</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td><tt><b>front()</b></tt> throws an exception when called on an empty Sequence</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><tt><b>back()</b></tt> correctly returns the last element of a Sequence</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td><tt><b>back()</b></tt> throws an exception when called on an empty Sequence</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><tt><b>empty()</b></tt> returns 1 if the Sequence is empty, 0 otherwise</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><tt><b>size()</b></tt> correctly returns the size of a Sequence</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><tt><b>clear()</b></tt> correctly removes all elements of a Sequence</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td><tt><b>erase()</b></tt> correctly removes specified elements of a Sequence</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td><tt><b>erase()</b></tt> throws an exception when called with invalid parameters</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td>The assignment operator (=) correctly produces an independent copy of a Sequence</td>
+<td style="text-align: center;">3</td>
+</tr>
+<td>The copy constructor correctly produces an independent copy of a Sequence</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td>Code has no memory leaks</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td>Your code is well organized, clearly written, and well-documented</td>
+<td style="text-align: center;">5</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+</body>
+</html>

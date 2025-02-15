@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://pilot.wright.edu/content/202330-202380/698585-4M202430/Projects/Project5.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Project #5</title>
+	<link rel="stylesheet" href="./Project #5_files/styles.css" type="text/css">
+
+	<script>function lti_launch(vars, target) {
+			var query = '';
+			var new_tab = false;
+
+			for (var key in vars) {
+				if (query.length == 0) {
+					query += '?' + key + '=' + encodeURIComponent(vars[key]);
+				}
+				else {
+					query += '&' + key + '=' + encodeURIComponent(vars[key]);
+				}
+			}
+
+			var url = '/d2l/customization/pearsonlti/6605/Launch' + query; (target == '_blank') ? window.open(url, '_blank') : location.replace(url);
+		}</script>
+	<script src="./Project #5_files/mathjax.js" type="module"></script>
+	<script>document.addEventListener('DOMContentLoaded', function () {
+			if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+				document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+					elm.setAttribute('style', 'display: block; height: 0.5rem;');
+				});
+
+				window.D2L.MathJax.loadMathJax({
+					'outputScale': 1.3,
+					'renderLatex': false
+				});
+			}
+		});</script>
+	<script src="./Project #5_files/prism.js" type="module"></script>
+	<script>document.addEventListener('DOMContentLoaded', function () {
+			document.querySelectorAll('.d2l-code').forEach(code => {
+				window.D2L.Prism.formatCodeElement(code);
+			});
+		});</script>
+	<script>window.addEventListener('message', function (event) {
+			if (!event.data) {
+				return;
+			}
+
+			var params;
+			try {
+				params = JSON.parse(event.data);
+			}
+			catch {
+				return;
+			}
+			if (!params.subject || params.subject !== 'lti.frameResize') {
+				return;
+			}
+
+			const MAX_FRAME_HEIGHT = 10000
+			if (!params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT) {
+				console.warn('Invalid height value received, aborting');
+				return;
+			}
+			var el = document.getElementsByTagName('iframe');
+			for (var i = 0; i < el.length; i++) {
+				if (el[i].contentWindow === event.source) {
+					el[i].style.height = params.height + 'px';
+					el[i].style.width = '100%';
+					console.info('Setting iFrame height to ' + params.height);
+					console.info('Setting iFrame width to 100%');
+				}
+			}
+		});</script>
+<script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/6605/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="./Project #5_files/mathjax(1).js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+							elm.setAttribute('style', 'display: block; height: 0.5rem;');
+						});
+
+						window.D2L.MathJax.loadMathJax({
+							'outputScale': 1.5,
+							'renderLatex': false
+						});
+					}
+				});</script><script src="./Project #5_files/prism(1).js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head>
+
+<body style="overscroll-behavior-x: auto;">
+	<div id="content">
+		<p class="course">CS 3100 – <i>Data Structures and Algorithms</i></p>
+		<h1>Project #5 – Building a word autocomplete application using an alphabet trie</h1>
+		<h2>Learning Objectives</h2>
+		<ul>
+			<li>Demonstrate effective use of memory management techniques in C++</li>
+			<li>Implement a data structure to meet given specifications</li>
+			<li>Design, implement, and use a trie data structure</li>
+			<li>Analyze operations for time complexity</li>
+		</ul>
+		<h2>Overview</h2>
+		<p>Your task for this assignment is to implement an alphabet trie data structure, and to use this data structure
+			to write an autocomplete program using an English dictionary.</p>
+		<h2>The Trie Class</h2>
+		<p>In order to implement your autocomplete program, you will need to create a trie data structure (class Trie)
+			to facilitate efficient word searches from an English dictionary.
+
+		</p><ul>
+			<li><b><tt>bool Trie::insert(string)</tt></b> – Insert a new word into the trie. Duplicate words are
+				not allowed.
+				This function should return <b>true</b> if the word is successfully inserted into the trie, and
+				<b>false</b> if the word could not
+				be inserted (for example, due to a duplicate word already found in the trie).
+			</li><br>
+
+			<li><b><tt>int Trie::count()</tt></b> – return the number of <b>words</b> in the trie</li><br>
+
+			<li><b><tt>int Trie::getSize()</tt></b> – return the total number of <b>nodes</b> in the trie</li>
+			<br>
+
+			<li><b><tt>bool Trie::find(string)</tt></b> – if the given word is found in the trie, this function
+				should return <b>true</b>, otherwise this function should return <b>false</b></li><br>
+
+			<li><b><tt>int Trie::completeCount(string)</tt></b> – this function should return the number of words
+				in the dictionary that begin with the given input string. If no matching words are found, the function
+				should return zero.</li><br>
+
+			<li><b><tt>vector&lt;string&gt; Trie::complete(string)</tt></b> – this function should return a C++
+				vector of strings containing all of the words in the dictionary that begin with the given input string.
+				For each word found in the trie, there will be one value in the vector. If no matching words are found,
+				the function should return an empty vector.
+
+				<p><b>Example:</b> The call <tt><b>resultVector = myTrie.complete("addr")</b></tt> were called on a trie
+					built with the wordlist.txt file provided with this project should return a vector containing the
+					strings: {"address", "addressable", "addressed", "addressee", "addressees", "addresses",
+					"addressing"}.</p>
+
+			</li><li><b><tt>Trie&amp; Trie::operator=(const Trie&amp;)</tt></b> – <tt><b>trie1 = trie2</b></tt> should remove
+				all contents of trie1 (without memory leaks) and make an independent copy of trie2 in trie1.</li><br>
+
+			<li><b><tt>Copy constructor</tt></b> – must correctly make an independent trie that is an exact copy
+				of the original trie.</li><br>
+
+
+
+		</ul>
+
+		<h2>Main program using the trie</h2>
+		<p>You should test your trie with a main() function that loads the provided English dictionary file, prompts the
+			user for a prefix, and then uses the trie to find all
+			completions for the prefix. An example of the execution of your main program follows:
+
+		</p><blockquote class="code">
+			<pre>Please enter a word prefix (or press enter to exit):  addr
+There are 7 completions for the prefix 'addr'.  Show completions?  Yes
+Completions
+-----------
+address
+addressable
+addressed
+addressee
+addressees
+addresses
+addressing
+
+Please enter a word prefix (or press enter to exit):
+</pre>
+		</blockquote>
+
+
+		<h2>Turn in and Grading</h2>
+		<ul>
+			<li>The Trie class should use a seperate Trie.h and Trie.cpp file.</li>
+			<li>The autocomplete program should be in a file named project5.cpp.</li>
+			<li>Please zip your entire project directory
+				into a single file called Project5.zip.</li>
+			<li>Your trie will be evaluated using <b>both</b> your autocomplete program, <b>and</b> with a test harness,
+				so be sure that your functions conform completely to the specifications in this assignment.</li>
+		</ul>
+		<p>This project is worth 50 points, distributed as follows:</p>
+		<table class="table_stripes" border="1" cellspacing="0" cellpadding="0" style="width: 100%;">
+			<tbody>
+				<tr>
+					<td><b>Task</b></td>
+					<td style="text-align: center;"><b>Points</b></td>
+				</tr>
+				<tr>
+					<td><b><tt>Trie::insert</tt></b> stores words correctly in the trie, and correctly rejects duplicate
+						words</td>
+					<td style="text-align: center;">5</td>
+				</tr>
+				<tr>
+					<td><b><tt>Trie::count</tt></b> correctly returns the number of words in the trie</td>
+					<td style="text-align: center;">2</td>
+				</tr>
+				<tr>
+					<td><b><tt>Trie::getSize</tt></b> correctly returns the number of nodes in the trie</td>
+					<td style="text-align: center;">4</td>
+				</tr>
+				<tr>
+					<td><b><tt>Trie::find</tt></b> correctly determines if a word is present in the trie</td>
+					<td style="text-align: center;">4</td>
+				</tr>
+
+				<tr>
+					<td><b><tt>Trie::completeCount</tt></b> correctly returns the number of words in the trie matching a
+						given prefix</td>
+					<td style="text-align: center;">5</td>
+				</tr>
+
+				<tr>
+					<td><b><tt>Trie::complete</tt></b> correctly returns a C++ vector
+						of words (strings) that begin with the given prefix</td>
+					<td style="text-align: center;">5</td>
+				</tr>
+
+				<tr><td>Copy constructor works correctly.</td>
+				<td style="text-align: center;">5</td>
+				</tr>
+
+				<tr>
+					<td><b><tt>Trie::operator=</tt></b> works correctly.</td>
+					<td style="text-align: center;">5</td>
+				</tr>
+				
+
+				<tr>
+					<td colspan="2"><i>Note that your code must implement an alphabet trie to get credit for any of the
+							above items.</i></td>
+				</tr>
+
+				<tr>
+					<td>No memory leaks</td>
+					<td style="text-align: center;">5</td>
+				</tr>
+
+
+				<!--
+<tr>
+<td>Time complexity analyses for all required functions are correct</td>
+<td style="text-align: center;">3</td>
+</tr>
+
+<tr>
+<td>Space complexity analysis for the trie is correct</td>
+<td style="text-align: center;">2</td>
+</tr>
+-->
+
+				<tr>
+					<td>Autocomplete program correctly reads user input, prints number of words that begin with the
+						prefix, and outputs all words with the prefix.</td>
+					<td style="text-align: center;">5</td>
+				</tr>
+
+				<tr>
+					<td>Code is well organized, well documented, and properly formatted. Variable names are clear, and
+						readable.</td>
+					<td style="text-align: center;">5</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+</body></html>

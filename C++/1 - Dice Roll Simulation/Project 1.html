@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Project #1</title>
+<link rel="stylesheet" href="../template_files/styles.css" type="text/css">
+
+<script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/6605/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="https://s.brightspace.com/lib/bsi/20.23.12-266/unbundled/mathjax.js?v=20.23.12.20435" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+							elm.setAttribute('style', 'display: block; height: 0.5rem;');
+						});
+
+						window.D2L.MathJax.loadMathJax({
+							'outputScale': 1.5,
+							'renderLatex': false
+						});
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/20.23.12-266/unbundled/prism.js?v=20.23.12.20435" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head>
+<body>
+<div id="content">
+<p class="course">CS 3100 &ndash; <i>Data Structures and Algorithms</i></p>
+<h1>Project #1 &ndash; Simulating dice rolls</h1>
+<h2>Learning Objectives</h2>
+<ul>
+<li>Learn the VS-Code programming environment</li>
+<li>Apply basic programming concepts in C++</li>
+</ul>
+<h2>Overview</h2>
+<p>Your task for this assignment is to build a dice roll simulator that functions according to the following specifications.</p>
+<h2>Program Operation</h2>
+<p>Your program should prompt the user for the number of rolls to make (see example below).  It should then simulate
+two (6-sided) die tosses per roll using the C++ <tt><b>rand()</b></tt> function for each individual die toss.  For each roll,
+the total value of the result should be calculated.  An array of integers should be
+used to keep track of the number of times each total is rolled.
+After all simulations are complete, the number of times each total was rolled should be printed.  Be sure to seed the random number generator with the time (as discussed in class) to ensure that you get new random outputs each time you run the program.</p>
+
+<h2>Example of Program Execution</h2>
+<p>In the example below, the number 100 is entered by the user:
+<blockquote class="code">
+<pre>How many rolls?  100
+Simulating 100 rolls...
+Results:
+2 was rolled 6 times
+3 was rolled 5 times
+4 was rolled 9 times
+5 was rolled 9 times
+6 was rolled 14 times
+7 was rolled 23 times
+8 was rolled 13 times
+9 was rolled 11 times
+10 was rolled 7 times
+11 was rolled 1 times
+12 was rolled 2 times
+</pre>
+</blockquote></p>
+
+</ul>
+<h2>Turn in and Grading</h2>
+<p>Please upload a single file named <em>project1.cpp</em> to the dropbox. Do not zip, archive, or compress your file.<em><br /></em></p>
+<p>This project is worth 10 points, distributed as follows:</p>
+<table class="table_stripes" border="1" cellspacing="0" cellpadding="0" style="width: 100%;">
+<tbody>
+<tr>
+<td><b>Task</b></td>
+<td style="text-align: center;"><b>Points</b></td>
+</tr>
+<tr>
+<td>Program compiles, runs, and produces correct output</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td>Program produces different output each time it is run</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td>Program makes correct use of an array to store roll total counts</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>Program conforms to coding standards (see <i>CS 3100 Coding Standards</i> in the Content/Handouts
+section of our class Pilot page)</td>
+<td style="text-align: center;">3</td>
+</tr>
+</div>
+</body>
+</html>
